@@ -3,11 +3,13 @@ A Training project
 
 
 1. Description du jeu
+
   Le jeu est un simple Puissance 4 PvP (pas de joueur contrôlé par l'ordinateur).
 
 2. Implémentation technique
 
 3. Notice d'utilisation
+
   Le jeu va vous informer de quel joueur c'est le tour.
   
   Celui-ci doit entrer la colonne dans laquelle il compte lacher son pion, sous la forme d'un simple chiffre entre 1 et 7
