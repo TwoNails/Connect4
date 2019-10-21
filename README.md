@@ -23,6 +23,8 @@ A Training project
   Vous pouvez entrer les inputs enregistrés dans ce tableau au fur et à mesure qu'ils vous seront demandés par le programme.
 
   Tour  : 1 2 3 4 5 6 7 8 9 10
+  
   J1    : 5 3 3 7 6 4 5 3 1 4
+  
   J2    : 3 5 6 7 5 5 6 3 4 6
   
