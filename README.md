@@ -8,6 +8,8 @@ A Training project
 
 2. Implémentation technique
 
+  Clonez le répertoire Git dans un dossier de votre choix sur votre ordinateur. Appelez le terminal de votre ordinateur sur ce dossier et entrez la commande javac Main.java pour compiler le code. Vous pouvez par la suite l'executer avec la commannde java Main.java.
+
 3. Notice d'utilisation
 
   Le jeu va vous informer de quel joueur c'est le tour.
