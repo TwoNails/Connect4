@@ -1,12 +1,11 @@
 # Connect4
-A Training project
 
 
-1. Description du jeu
+###1. Description du jeu
 
   Le jeu est un simple Puissance 4 avec l'option de jouer contre un joueur humain ou contre l'ordinateur.
 
-2. Implémentation technique
+###2. Implémentation technique
 
   Clonez le répertoire Git dans un dossier de votre choix sur votre ordinateur. Appelez le terminal de votre ordinateur sur ce dossier et entrez la commande javac MainConnect4.java pour compiler le code. Compilez également GameManager.java, Pawn.java et IAscripts.java. Vous pouvez par la suite executer le programme avec la commannde java MainConnect4.
   
@@ -20,7 +19,7 @@ A Training project
   
   ![](https://i.imgur.com/u1f5j9i.png)
 
-3. Notice d'utilisation
+###3. Notice d'utilisation
 
   Le jeu va vous informer de quel joueur c'est le tour.
   
@@ -33,7 +32,7 @@ A Training project
   
   Le programme déterminera lui-même si la partie est finie.
 
-4. Exemple d'utilisation :
+###4. Exemple d'utilisation :
 
   Vous trouverez ci-dessous un exemple de partie type, qui se terminera en dix coups par la victoire du joueur 2.
   
