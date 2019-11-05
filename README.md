@@ -47,5 +47,5 @@
   
   N'hésitez pas à jouer vos propres parties, ou à jouer contre l'IA pour en tester les limites
   
-  **NOTE** : Plusieurs tests ont par ailleurs été effectués pour s'assurer que le programme ne plante pas lorsque le joueur tente d'entrer des inputs qui ne sont pas attendus.
+  **NOTE** : Plusieurs tests ont par ailleurs été effectués pour s'assurer que le programme ne plante pas lorsque le joueur tente d'entrer des inputs qui ne sont pas attendus, et lorsque le joueur ou l'IA jouent dans une colonne déjà remplie.
   
