@@ -1,4 +1,4 @@
-package Connect4_V3;
+// package Connect4_V3;
 
 class Pawn {
 
@@ -130,7 +130,6 @@ class Pawn {
                 break;
             }
         }
-        System.out.println("Un pion vient d'être placé à la rangée " + this.row + " et à la colonne " + this.column);
 
 
         this.checkYourNeighbour("ne");                  // on va voir si ce pion a un voisin de sa couleur au nord-est. Si oui on incrémentera une variable de main puis
