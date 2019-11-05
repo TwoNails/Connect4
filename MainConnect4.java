@@ -13,7 +13,7 @@ class MainConnect4 {
     public static void main(String[] args) { 
 
         System.out.println("\n     ULTIMATE CONNECT 4 - IA EDITION      \n===========================================");
-        System.out.println("\n  [ ]   [ ]   [ ]   [ ]   [ ]   [ ]   [ ]\n  [ ]   [X]   [ ]   [ ]   [X]   [ ]   [O]\n  [X]   [ ]   [X]   [ ]   [X]   [ ]   [X]");
+        System.out.println("\n  [ ]   [ ]   [ ]   [ ]   [ ]   [ ]   [ ]\n  [ ]   [X]   [ ]   [ ]   [X]   [ ]   [X]\n  [X]   [ ]   [X]   [ ]   [X]   [ ]   [X]");
         System.out.println(  "  [X]   [ ]   [ ]   [ ]   [X]   [X]   [X]\n  [X]   [ ]   [X]   [ ]   [ ]   [ ]   [X]\n  [ ]   [X]   [ ]   [ ]   [ ]   [ ]   [X]\n");
 
         GameManager currentGameManager;
