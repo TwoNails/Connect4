@@ -8,7 +8,11 @@ A Training project
 
 2. Implémentation technique
 
-  Clonez le répertoire Git dans un dossier de votre choix sur votre ordinateur. Appelez le terminal de votre ordinateur sur ce dossier et entrez la commande javac Main.java pour compiler le code. Vous pouvez par la suite l'executer avec la commannde java Main.java.
+  Clonez le répertoire Git dans un dossier de votre choix sur votre ordinateur. Appelez le terminal de votre ordinateur sur ce dossier et entrez la commande javac MainConnect4.java pour compiler le code. Compilez également GameManager.java, Pawn.java et IAscripts.java. Vous pouvez par la suite executer le programme avec la commannde java MainConnect4.
+  
+  Le fonctionnement du programme est décrit sur ces deux schémas : 
+  ici GameManager et Pawn https://i.imgur.com/oaOktjZ.png
+  ici MainConnect4 et IAscripts https://i.imgur.com/raULFCr.png
 
 3. Notice d'utilisation
 
@@ -34,4 +38,6 @@ A Training project
   J1___ : 5 3 3 7 6 4 5 3 1 4
   
   J2___ : 3 5 6 7 5 5 6 3 4 6
+  
+  NOTE : Plusieurs tests ont par ailleurs été effectués pour s'assurer que le programme ne plante pas lorsque le joueur tente d'entrer des inputs qui ne sont pas attendus.
   
