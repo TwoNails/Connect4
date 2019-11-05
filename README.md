@@ -4,7 +4,7 @@ A Training project
 
 1. Description du jeu
 
-  Le jeu est un simple Puissance 4 PvP (pas de joueur contrôlé par l'ordinateur).
+  Le jeu est un simple Puissance 4 avec l'option de jouer contre un joueur humain ou contre l'ordinateur.
 
 2. Implémentation technique
 
