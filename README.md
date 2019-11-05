@@ -12,9 +12,13 @@ A Training project
   
   Le fonctionnement du programme est décrit sur ces deux schémas :
   
-  - ici GameManager et Pawn ![](https://i.imgur.com/slGNBm2.png)
+  - ici **GameManager** et **Pawn**
   
-  - ici MainConnect4 et IAscripts ![](https://i.imgur.com/u1f5j9i.png)
+  ![](https://i.imgur.com/slGNBm2.png)
+  
+  - ici **MainConnect4** et **IAscripts** 
+  
+  ![](https://i.imgur.com/u1f5j9i.png)
 
 3. Notice d'utilisation
 
