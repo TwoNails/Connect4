@@ -10,8 +10,10 @@ A Training project
 
   Clonez le répertoire Git dans un dossier de votre choix sur votre ordinateur. Appelez le terminal de votre ordinateur sur ce dossier et entrez la commande javac MainConnect4.java pour compiler le code. Compilez également GameManager.java, Pawn.java et IAscripts.java. Vous pouvez par la suite executer le programme avec la commannde java MainConnect4.
   
-  Le fonctionnement du programme est décrit sur ces deux schémas : 
+  Le fonctionnement du programme est décrit sur ces deux schémas :
+  
   ici GameManager et Pawn https://i.imgur.com/oaOktjZ.png
+  
   ici MainConnect4 et IAscripts https://i.imgur.com/raULFCr.png
 
 3. Notice d'utilisation
