@@ -38,11 +38,11 @@
   
   Vous pouvez entrer les inputs enregistrés dans ce tableau au fur et à mesure qu'ils vous seront demandés par le programme.
 
-  Tour  : 1 2 3 4 5 6 7 8 9 10
+  **Tour**  : 1 2 3 4 5 6 7 8 9 10
   
-  J1___ : 5 3 3 7 6 4 5 3 1 4
+  **J1**___ : 5 3 3 7 6 4 5 3 1 4
   
-  J2___ : 3 5 6 7 5 5 6 3 4 6
+  **J2**___ : 3 5 6 7 5 5 6 3 4 6
   
-  NOTE : Plusieurs tests ont par ailleurs été effectués pour s'assurer que le programme ne plante pas lorsque le joueur tente d'entrer des inputs qui ne sont pas attendus.
+  **NOTE** : Plusieurs tests ont par ailleurs été effectués pour s'assurer que le programme ne plante pas lorsque le joueur tente d'entrer des inputs qui ne sont pas attendus.
   
