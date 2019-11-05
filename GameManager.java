@@ -1,4 +1,4 @@
-package Connect4_V3;
+// package Connect4_V3;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -33,23 +33,23 @@ class GameManager {
      * use of \t and \n to build a String that will properly represent it. 
      */
     public void displayBoard(){
-        String str = "";
+        String str = "      ";
 
         for(int j=0 ; j<board[0].length ; j++){
             for(int i=0 ; i<board.length ; i++){     
 
                 if(board[i][j]==null){
-                    str+="[ ]\t";
+                    str+="[ ] ";
                 }else{
                     if(board[i][j].player1==true){
-                        str+="[X]\t";
+                        str+="[X] ";
                     }
                     if(board[i][j].player1==false){
-                        str+="[O]\t";
+                        str+="[O] ";
                     }
                 }          
             }
-            str+="\n";
+            str+="\n        ";
         }
         System.out.println(str);
     }
@@ -105,6 +105,7 @@ class GameManager {
                     System.out.println("It's the turn of the computer. ");
                     AIscripts scriptsForThisBoardState = new AIscripts(board);
 
+                    int errorMove = 0;          
                     int nextMove = 0;
 
                     nextMove = scriptsForThisBoardState.winningMove();
@@ -118,8 +119,14 @@ class GameManager {
                     if(nextMove == -1) {
                         nextMove = scriptsForThisBoardState.randomMove();
                     }
-
-                    allPawns.add(new Pawn(nextMove, this));
+                    try {
+                        allPawns.add(new Pawn(nextMove, this));
+                    } catch (IndexOutOfBoundsException e) {
+                        errorMove++; 
+                        System.out.println("catched an error");       
+                        allPawns.add(new Pawn((nextMove+errorMove%7), this)); 
+                                                 
+                    }
                 }
 
             }
