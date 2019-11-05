@@ -1,4 +1,4 @@
-package Connect4_V3;
+// package Connect4_V3;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -13,8 +13,8 @@ class MainConnect4 {
     public static void main(String[] args) { 
 
         System.out.println("\n     ULTIMATE CONNECT 4 - IA EDITION      \n===========================================");
-        System.out.println("\n  [ ]   [ ]   [ ]   [ ]   [ ]   [ ]   [ ]\n  [ ]   [O]   [ ]   [ ]   [O]   [ ]   [O]\n  [O]   [ ]   [O]   [ ]   [O]   [ ]   [O]");
-        System.out.println(  "  [O]   [ ]   [ ]   [ ]   [O]   [O]   [O]\n  [O]   [ ]   [O]   [ ]   [ ]   [ ]   [O]\n  [ ]   [O]   [ ]   [ ]   [ ]   [ ]   [O]\n");
+        System.out.println("\n  [ ]   [ ]   [ ]   [ ]   [ ]   [ ]   [ ]\n  [ ]   [X]   [ ]   [ ]   [X]   [ ]   [O]\n  [X]   [ ]   [X]   [ ]   [X]   [ ]   [X]");
+        System.out.println(  "  [X]   [ ]   [ ]   [ ]   [X]   [X]   [X]\n  [X]   [ ]   [X]   [ ]   [ ]   [ ]   [X]\n  [ ]   [X]   [ ]   [ ]   [ ]   [ ]   [X]\n");
 
         GameManager currentGameManager;
         int nbrGames=0;
