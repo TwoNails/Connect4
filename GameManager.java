@@ -33,7 +33,7 @@ class GameManager {
      * use of \t and \n to build a String that will properly represent it. 
      */
     public void displayBoard(){
-        String str = "      ";
+        String str = "        ";
 
         for(int j=0 ; j<board[0].length ; j++){
             for(int i=0 ; i<board.length ; i++){     
@@ -55,13 +55,13 @@ class GameManager {
     }
 
     public GameManager(boolean singlePlayer){
-        boolean endRound = false;                    // Ce boolean contrôlera la sortie de la boucle principale
+        boolean endRound = false;                    // We will use this boolean to quit the Main loop eventually
 
-        List<Pawn> allPawns = new ArrayList<Pawn>();    // Je veux pouvoir instancier des pions à chaque tour sans avoir besoin de les nommer, et avant de savoir ou 
-                                                    //  ils atterriront dans le tableau. Ce n'est pas très élégant mais cette liste est juste là pour me le permettre
+        List<Pawn> allPawns = new ArrayList<Pawn>();    // I want ti instanciate my Pawns every turn without needing to name each of them individually, and before knowing at which
+                                                    // index they'll end up int the board. This line not be perfectly clean code but for now it allows me to do that.
         Scanner sc = new Scanner(System.in);
 
-        displayBoard();                        // Après playtests, pouvoir voir le tableau, bien que vide, dès le début est apprécié des joueurs
+        displayBoard();                        // After some playtests, being able to see the board, even empty, at the start, is appreciated
 
         while(!endRound){  
             currentTurn++;
@@ -78,11 +78,12 @@ class GameManager {
                 }
                 System.out.println("In which row would you like to drop your Pawn ?");
                 try {
-                    allPawns.add(new Pawn(sc.nextInt()-1, this));     // on appelle le constructeur de Pawn, ce qui peut potentiellement soulever des erreurs.
-                } catch (IndexOutOfBoundsException e) {         // le constructeur va interagir avec un tableau et peut renvoyer une erreur si l'int entré par le joueur
-                    currentTurn--;                              // ne correspond pas à l'une des colonnes de ce tableau
+                    allPawns.add(new Pawn(sc.nextInt()-1, this));     // we are calling Pawn's constructor, which can potentially provoque some errors
+                } catch (IndexOutOfBoundsException e) {         // the constructor will interact with an array and can potentially send an error if the int entered by the player
+                                                // does not match any of the array's columns. 
+                currentTurn--;                  //The constructor is then skipped, and we decrement currentTurn to allow the same player to play another move, hopefully a valid one.
                     System.out.println("Please enter a number between 1 and 7");
-                } catch (InputMismatchException e) {            // le constructeur attend un int et peut renvoyer une erreur dans le cas contraire
+                } catch (InputMismatchException e) {            // the constructor is expecting an int and will send an error otherwise
                     currentTurn--;
                     System.out.println("Please enter a number between 1 and 7");
                 } 
@@ -93,11 +94,11 @@ class GameManager {
                     System.out.println("It's your turn to play, " + MainConnect4.player1name);
                     System.out.println("In which row would you like to drop your Pawn ?");
                     try {
-                        allPawns.add(new Pawn(sc.nextInt()-1, this));     // on appelle le constructeur de Pawn, ce qui peut potentiellement soulever des erreurs.
-                    } catch (IndexOutOfBoundsException e) {         // le constructeur va interagir avec un tableau et peut renvoyer une erreur si l'int entré par le joueur
-                        currentTurn--;                              // ne correspond pas à l'une des colonnes de ce tableau
+                        allPawns.add(new Pawn(sc.nextInt()-1, this));    
+                    } catch (IndexOutOfBoundsException e) {         
+                        currentTurn--;                             
                         System.out.println("Please enter a number between 1 and 7");
-                    } catch (InputMismatchException e) {            // le constructeur attend un int et peut renvoyer une erreur dans le cas contraire
+                    } catch (InputMismatchException e) {            
                         currentTurn--;
                         System.out.println("Please enter a number between 1 and 7");
                     }
@@ -121,7 +122,7 @@ class GameManager {
                     }
                     try {
                         allPawns.add(new Pawn(nextMove, this));
-                    } catch (IndexOutOfBoundsException e) {
+                    } catch (IndexOutOfBoundsException e) {         // this is meant to give the AI an alternative move if she's stuck choosing one that can't be played because the column is full.
                         errorMove++; 
                         System.out.println("catched an error");       
                         allPawns.add(new Pawn((nextMove+errorMove%7), this)); 
@@ -133,16 +134,16 @@ class GameManager {
             
             displayBoard();
 
-            if(currentPawnSouthNeighbours>2                                                 // s'il y a au moins trois pions sous le pion qui vient d'être joué
-            || currentPawnNorthEastNeighbours + currentPawnSouthWestNeighbours>2       // ou répartis de par et d'autre sur l'un des trois autres axes possibles
+            if(currentPawnSouthNeighbours>2                                                 // if there's at least 3 Pawns under the one we just played
+            || currentPawnNorthEastNeighbours + currentPawnSouthWestNeighbours>2            // or when adding the number of Pawns on opposite sides in the three other possible axis
             || currentPawnEastNeighbours + currentPawnWestNeighbours>2
             || currentPawnSouthEastNeighbours + currentPawnNorthWestNeighbours>2)
             {
-                endRound=true;                                                                    // alors on provoque la sortie de boucle
+                endRound=true;                                                              // then we break out of the loop
             }
         }
 
-        System.out.println("Game Over !");                                          // on annonce la fin de partie et le vainqueur
+        System.out.println("Game Over !");                                          // and we announce the winner
         //sc.close();
         if(currentTurn%2==1){
             System.out.println("And the winner is : " + MainConnect4.player1name + " !        Scroll up to see the final board state.");

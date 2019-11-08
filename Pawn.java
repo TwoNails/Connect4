@@ -21,11 +21,11 @@ class Pawn {
         switch(direction){                               
 
             case "ne" :
-            if(this.row != 0 && this.column != 6){                  // On s'assure qu'on ne s'apprête pas à tenter de consulter une case inexistante dans le tableau
-                if(manager.board[this.column+1][this.row-1]!=null){            // S'il y a bien une valeur, un pion, à cet indice du tableau
-                    if(this.player1==manager.board[this.column+1][this.row-1].player1){    // Si ce pion appartient au même joueur que celui depuis lequel cette fonction est appelée
-                        manager.currentPawnNorthEastNeighbours++;                                  // Alors on incrémente le compteur de voisins du dernier pion joué.        
-                        manager.board[this.column+1][this.row-1].checkYourNeighbour(direction);    // Puis appelle cette fonction depuis ce pion pour voir un cran plus loin
+            if(this.row != 0 && this.column != 6){                  // We make sure that we're not about to try and check an inexistant index of the board
+                if(manager.board[this.column+1][this.row-1]!=null){            // If there's actually a non NULL something at this index, a Pawn,
+                    if(this.player1==manager.board[this.column+1][this.row-1].player1){    // If the Pawn we're checking is owned by the same player that the one Pawn from which this function is called
+                        manager.currentPawnNorthEastNeighbours++;                                  // Then we increment the neighbour counter for this axis.      
+                        manager.board[this.column+1][this.row-1].checkYourNeighbour(direction);    // Then we call this function from the Pawn we just checked to check for his own potential neighbours
                         break;
                     }
                 }
@@ -109,34 +109,34 @@ class Pawn {
     public Pawn(int columnPicked, GameManager currentManager){
         this.manager=currentManager;
 
-        if(manager.currentTurn%2==1){                      // si le tour est impair, alors ce pion appartient au joueur 1. S'il est pair, au joueur 2.
+        if(manager.currentTurn%2==1){                      // if the turn is odd, then this Pawn is owned by the player 1. Otherwise, by the player 2.
             this.player1=true;                          
         }else{
-            this.player1=false;                         // on attribue au boolean player1 la bonne valeur en conséquence.
+            this.player1=false;                         // we set the boolean player 1 consequently
         }
-        this.column = columnPicked;                     // on sait déjà que la variable column du pion qu'on instancie sera celle que le joeur vient de choisir
+        this.column = columnPicked;                     // we already know that the column attribute of the Pawn we're instanciating is the the one the player just chose.
 
 
-        for(int i = 0 ; i < 6 ; i++){                   // on boucle autant de fois que la profondeur d'une colonne (i est incrémenté)
+        for(int i = 0 ; i < 6 ; i++){                   // we loop for as many times as the depth of a columun
 
-            if(manager.board[columnPicked][i]!=null){      // s'il y a déjà un pion à la profondeur i
-                manager.board[columnPicked][i-1]=this;     // on place dans board le pion qu'on est en train d'instancier, une rangée au dessus.
-                this.row=i-1;                           // on sait maintenant quelle valeur attribuer à la variable row de notre pion.                    
+            if(manager.board[columnPicked][i]!=null){      // if ther'es a Pawn at the depth i
+                manager.board[columnPicked][i-1]=this;     // we place on the board the Pawn we're instanciating, one row above. IndexOutOfBoundsException are being dealt with by GamemManager
+                this.row=i-1;                           // we now know which value to give to its row attribute.                    
                 break;
             }
-            if(i==5){                                   // si on atteint le fond du plateau sans rencontrer de case occupée
-                manager.board[columnPicked][i]=this;       // on place dans le board le pion qu'on est en train d'instancier, au plus bas de la colonne.
-                this.row = i;                           // on sait maintenant quelle valeur attribuer à la variable row de notre pion.   
+            if(i==5){                                   // if we rech the floor of the board without encountering any Pawn
+                manager.board[columnPicked][i]=this;       // we place on the board the Pawn we are instanciating , on the last row.
+                this.row = i;                           // we now know which value to give to its row attribute.   
                 break;
             }
         }
 
 
-        this.checkYourNeighbour("ne");                  // on va voir si ce pion a un voisin de sa couleur au nord-est. Si oui on incrémentera une variable de main puis
-        this.checkYourNeighbour("e");                   // on ira voir un cran plus loin. Pour plus de détails voir le descriptif de la fonction checkYourNeighbour
+        this.checkYourNeighbour("ne");                  // we check if the Pawn we're instanciating has a neighbour of the same player in the north-east direction. If so, we'll increment 
+        this.checkYourNeighbour("e");                   // a certain value in GameManager then we'll check one step further. For more details see CheckYourNeighbour higher on this page
         this.checkYourNeighbour("se");
-        this.checkYourNeighbour("s");                   // pareil mais pour sud
-        this.checkYourNeighbour("sw");                  // sud-ouest
+        this.checkYourNeighbour("s");                   // same but for the south
+        this.checkYourNeighbour("sw");                  // south-west
         this.checkYourNeighbour("w");                   // etc.
         this.checkYourNeighbour("nw");
     }
